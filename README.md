@@ -1,3 +1,5 @@
+#Simples crud de livros SPA
+
 Aplicação é dividade em duas partes
 
 A primeira é uma api rest com laravel 5.8, a segunda é um spa com angular 8; 
