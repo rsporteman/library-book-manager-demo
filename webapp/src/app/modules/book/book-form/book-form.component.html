@@ -1,0 +1,62 @@
+<div [formGroup]="form">
+  <div class="form-group">
+    <label [for]="fieldOptions.isbn.id">{{fieldOptions.isbn.label}}</label>
+    <input [id]="fieldOptions.isbn.id"
+           [placeholder]="fieldOptions.isbn.placeholder"
+           class="form-control"
+           formControlName="isbn"
+           type="text">
+    <app-field-error [field]="form.get('isbn')"
+                     [label]="fieldOptions.isbn.label"
+                     [messages]="fieldOptions.isbn.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.title.id">{{fieldOptions.title.label}}</label>
+    <input [id]="fieldOptions.title.id"
+           [placeholder]="fieldOptions.title.placeholder"
+           class="form-control"
+           formControlName="title"
+           type="text">
+    <app-field-error [field]="form.get('title')"
+                     [label]="fieldOptions.title.label"
+                     [messages]="fieldOptions.title.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.author.id">{{fieldOptions.author.label}}</label>
+    <input [id]="fieldOptions.author.id"
+           [placeholder]="fieldOptions.author.placeholder"
+           class="form-control"
+           formControlName="author"
+           type="text">
+    <app-field-error [field]="form.get('author')"
+                     [label]="fieldOptions.author.label"
+                     [messages]="fieldOptions.author.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.description.id">{{fieldOptions.description.label}}</label>
+    <textarea [id]="fieldOptions.description.id"
+           [placeholder]="fieldOptions.description.placeholder"
+           class="form-control"
+           formControlName="description"
+           type="text"></textarea>
+    <app-field-error [field]="form.get('description')"
+                     [label]="fieldOptions.description.label"
+                     [messages]="fieldOptions.description.validationMessage"></app-field-error>
+  </div>
+  <div class="form-group">
+    <label [for]="fieldOptions.category_id.id">{{fieldOptions.category_id.label}}</label>
+    <select    (ngModelChange)="changeSelect($event)"
+                [id]="fieldOptions.category_id.id"
+               class="form-control"
+               formControlName="category_id">
+      <option *ngFor="let item of items" [value]="item.id">
+        {{item.name}}
+      </option>
+    </select>
+    <app-field-error [field]="form.get('category_id')"
+                     [label]="fieldOptions.category_id.label"
+                     [messages]="fieldOptions.category_id.validationMessage"></app-field-error>
+  </div>
+
+</div>
+

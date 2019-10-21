@@ -1,0 +1,9 @@
+<div class="container">
+  <h3>Nova Categoria</h3>
+  <app-card-error *ngIf="showErrors()">
+    <list-error [errors]="errors"></list-error>
+  </app-card-error>
+  <app-category-form [form]="form" [formService]="formService"></app-category-form>
+  <button class="btn btn-primary" (click)="onSubmit()" [disabled]="form.invalid">Salvar</button>
+</div>
+

@@ -1,0 +1,8 @@
+<div class="container">
+  <app-card-error>
+    <h3>Remover?</h3>
+    <app-category-form [form]="form" [formService]="formService"></app-category-form>
+    <button class="btn btn-outline-info" (click)="goBack()">Voltar</button>
+    <button class="btn btn-outline-warning fa-pull-right" (click)="onSubmit()">Remover</button>
+  </app-card-error>
+</div>
